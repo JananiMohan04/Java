@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class AtmWithdrawal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double balance = 10000; // initial balance
+        double minBalance = 1000; // minimum required balance
+        double dailyLimit = 5000; // daily withdrawal limit
+
+        System.out.println("Enter Withdrawal amount:");
+        double amount = sc.nextDouble();
+
+        if (amount <= balance && (balance - amount) >= minBalance && amount <= dailyLimit) {
+            balance = balance - amount;
+            System.out.println("Withdrawal successful");
+            System.out.println("Remaining Balance: $" + balance);
+        } else {
+            System.out.println("Withdrawal Failed");
+            System.out.println("Check Balance/minimum Balance/limit");
+        }
+        sc.close();
+    }
+}
